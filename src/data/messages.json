@@ -1,0 +1,39 @@
+[
+  {
+    "id": "1776526020815-gige2",
+    "createdAt": "2026-04-18T15:27:00.815Z",
+    "direction": "outbound",
+    "channel": "dashboard",
+    "fromName": "Director",
+    "fromRole": "director",
+    "toName": "Eldos Seitsamuly",
+    "toRole": "teacher",
+    "toChatId": "6862267674",
+    "text": "Так работает?\nSomething"
+  },
+  {
+    "id": "1776526150799-p244r",
+    "createdAt": "2026-04-18T15:29:10.799Z",
+    "direction": "inbound",
+    "channel": "telegram",
+    "fromName": "Eldos Seitsamuly",
+    "fromRole": "teacher",
+    "fromChatId": "6862267674",
+    "toName": "Director",
+    "toRole": "director",
+    "toChatId": "-1002743444548",
+    "text": "Работает упт"
+  },
+  {
+    "id": "1776531184387-xjnx3",
+    "createdAt": "2026-04-18T16:53:04.387Z",
+    "direction": "outbound",
+    "channel": "dashboard",
+    "fromName": "Director",
+    "fromRole": "director",
+    "toName": "Eldos Seitsamuly",
+    "toRole": "teacher",
+    "toChatId": "6862267674",
+    "text": "hf,jn"
+  }
+]

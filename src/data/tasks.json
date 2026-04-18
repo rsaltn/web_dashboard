@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1776530964857-smvp4",
+    "createdAt": "2026-04-18T16:49:24.857Z",
+    "status": "new",
+    "assignee": "Sholpan Shaimuratov освободи спортзал",
+    "title": "Sholpan Shaimuratov освободи спортзал",
+    "due": "",
+    "details": "Sholpan Shaimuratov освободи спортзал",
+    "complianceRisk": {
+      "risk": "medium",
+      "reason": "Автооценка: требуется ручная проверка",
+      "orderRefs": []
+    }
+  },
+  {
+    "id": "1776531026803-7910t",
+    "createdAt": "2026-04-18T16:50:26.803Z",
+    "status": "new",
+    "assignee": "Eldos Seitsamuly",
+    "title": "Eldos Seitsamuly подготовь хакатон",
+    "due": "",
+    "details": "Eldos Seitsamuly подготовь хакатон",
+    "complianceRisk": {
+      "risk": "medium",
+      "reason": "Автооценка: требуется ручная проверка",
+      "orderRefs": []
+    }
+  },
+  {
+    "id": "1776531028326-zpfh5",
+    "createdAt": "2026-04-18T16:50:28.326Z",
+    "status": "new",
+    "assignee": "Eldos Seitsamuly",
+    "title": "Eldos Seitsamuly подготовь хакатон",
+    "due": "",
+    "details": "Eldos Seitsamuly подготовь хакатон",
+    "complianceRisk": {
+      "risk": "medium",
+      "reason": "Автооценка: требуется ручная проверка",
+      "orderRefs": []
+    }
+  }
+]

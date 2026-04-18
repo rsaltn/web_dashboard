@@ -1,0 +1,298 @@
+[
+  {
+    "id": "t1",
+    "name": "Sholpan Shaymuratova",
+    "role": "teacher",
+    "subject": "English",
+    "qualification": "Senior",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t2",
+    "name": "Laura Rakhymbayeva",
+    "role": "teacher",
+    "subject": "English",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t3",
+    "name": "Nurbek Shurynbay",
+    "role": "teacher",
+    "subject": "English",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t4",
+    "name": "Fatima Sargulova",
+    "role": "teacher",
+    "subject": "Algebra",
+    "qualification": "Senior",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t5",
+    "name": "Aigerim Sadykova",
+    "role": "teacher",
+    "subject": "Algebra",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t6",
+    "name": "Askar Nurlanov",
+    "role": "teacher",
+    "subject": "Algebra",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t7",
+    "name": "Aizat Mukashev",
+    "role": "teacher",
+    "subject": "DEAR",
+    "qualification": "Senior",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t8",
+    "name": "Asemgul Ertozymova",
+    "role": "teacher",
+    "subject": "DEAR",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t9",
+    "name": "Olzhas Ulemen",
+    "role": "teacher",
+    "subject": "DEAR",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t10",
+    "name": "Aidos Sadak",
+    "role": "teacher",
+    "subject": "Physics",
+    "qualification": "Senior",
+    "telegramChatId": "1419276848"
+  },
+  {
+    "id": "t11",
+    "name": "Kairat Beisen",
+    "role": "teacher",
+    "subject": "Physics",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t12",
+    "name": "Elmira Kusain",
+    "role": "teacher",
+    "subject": "Physics",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t13",
+    "name": "Aruzhan Smagul",
+    "role": "teacher",
+    "subject": "Geometry",
+    "qualification": "Senior",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t14",
+    "name": "Saida Nursultan",
+    "role": "teacher",
+    "subject": "Geometry",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t15",
+    "name": "Madiyar Ibray",
+    "role": "teacher",
+    "subject": "Geometry",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t16",
+    "name": "Zhanar Bolkebay",
+    "role": "teacher",
+    "subject": "Kazakh",
+    "qualification": "Senior",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t17",
+    "name": "Dana Turlybek",
+    "role": "teacher",
+    "subject": "Kazakh",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t18",
+    "name": "Rauan Bek",
+    "role": "teacher",
+    "subject": "Kazakh",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t19",
+    "name": "Eldos Seitsamuly",
+    "role": "teacher",
+    "subject": "ICT",
+    "qualification": "Senior",
+    "telegramChatId": "6862267674"
+  },
+  {
+    "id": "t20",
+    "name": "Madina Akhmetova",
+    "role": "teacher",
+    "subject": "ICT",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t21",
+    "name": "Timur Zhaksylykov",
+    "role": "teacher",
+    "subject": "ICT",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t22",
+    "name": "Ainur Tokayeva",
+    "role": "teacher",
+    "subject": "SAT Verbal",
+    "qualification": "Senior",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t23",
+    "name": "Dias Nursapa",
+    "role": "teacher",
+    "subject": "SAT Verbal",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t24",
+    "name": "Madina Saparova",
+    "role": "teacher",
+    "subject": "SAT Verbal",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t25",
+    "name": "Sairasyn Sayrokov",
+    "role": "teacher",
+    "subject": "SAT Math",
+    "qualification": "Senior",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t26",
+    "name": "Rinat Mukhit",
+    "role": "teacher",
+    "subject": "SAT Math",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t27",
+    "name": "Alibi Zhumabay",
+    "role": "teacher",
+    "subject": "SAT Math",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t28",
+    "name": "Aibek Tulegen",
+    "role": "teacher",
+    "subject": "Chemistry",
+    "qualification": "Senior",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t29",
+    "name": "Dana Altynbek",
+    "role": "teacher",
+    "subject": "Chemistry",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t30",
+    "name": "Murat Kaldybay",
+    "role": "teacher",
+    "subject": "Chemistry",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t31",
+    "name": "Sanzhar Omar",
+    "role": "teacher",
+    "subject": "PE",
+    "qualification": "Senior",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t32",
+    "name": "Aliya Utepova",
+    "role": "teacher",
+    "subject": "PE",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "t33",
+    "name": "Nurdaulet Amir",
+    "role": "teacher",
+    "subject": "PE",
+    "qualification": "Middle",
+    "telegramChatId": ""
+  },
+  {
+    "id": "a1",
+    "name": "Gaukhar Directorova",
+    "role": "director",
+    "subject": "",
+    "qualification": "Admin",
+    "telegramChatId": ""
+  },
+  {
+    "id": "a2",
+    "name": "Zavhoz Marat",
+    "role": "facility_manager",
+    "subject": "",
+    "qualification": "Admin",
+    "telegramChatId": ""
+  },
+  {
+    "id": "a3",
+    "name": "Secretary Lyazzat",
+    "role": "secretary",
+    "subject": "",
+    "qualification": "Admin",
+    "telegramChatId": ""
+  },
+  {
+    "id": "a4",
+    "name": "Psychologist Asel",
+    "role": "psychologist",
+    "subject": "",
+    "qualification": "Admin",
+    "telegramChatId": ""
+  }
+]

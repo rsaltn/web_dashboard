@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Завуч Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">School Ops AI</div>
+        <nav class="nav">
+          <a href="#overview" class="active">Обзор</a>
+          <a href="#schedule">Расписание</a>
+          <a href="#tasks">Задачи</a>
+          <a href="#substitutions">Замены</a>
+          <a href="#chat">Чат</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="overview" class="hero">
+        <div class="hero-main card">
+          <p class="muted smallcaps">Панель директора</p>
+          <h1>Утренний command center школы</h1>
+          <p class="muted">
+            Система собирает сообщения, считает питание, показывает инциденты, помогает с заменами и ставит задачи.
+          </p>
+          <div class="actions">
+            <button id="focusAttendanceBtn">Проверить посещаемость</button>
+            <button id="focusTasksBtn">Поставить задачи</button>
+            <button id="focusSubBtn">Открыть замены</button>
+          </div>
+        </div>
+        <div class="hero-side card dark">
+          <p class="muted smallcaps light">Школа</p>
+          <h2>Aqbobek Educational Complex</h2>
+          <p class="muted light">Region: Astana</p>
+          <div class="kpi"><span>Питание</span><strong id="summary">...</strong></div>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <article class="card stat"><p class="smallcaps muted">Инциденты</p><strong id="incidentsCount">0</strong></article>
+        <article class="card stat"><p class="smallcaps muted">Задачи</p><strong id="tasksCount">0</strong></article>
+        <article class="card stat"><p class="smallcaps muted">Замены</p><strong id="subsCount">0</strong></article>
+      </section>
+
+      <section id="schedule" class="card">
+        <h2>Мини-расписание по классам (1A-11C)</h2>
+        <select id="classSelect"></select>
+        <div id="miniScheduleTable"></div>
+      </section>
+
+      <section id="tasks" class="card">
+        <h2>Постановка задач (текст директора)</h2>
+        <textarea id="taskInput" rows="4" placeholder="Например: Sholpan Shaymuratova, подготовьте кабинет; Laura Rakhymbayeva, соберите списки"></textarea>
+        <button id="createTasksBtn">Разобрать и поставить задачи</button>
+      </section>
+
+      <section id="substitutions" class="card">
+        <h2>Замена учителя</h2>
+        <input id="sickTeacher" list="teacherNamesList" placeholder="ФИО заболевшего учителя" />
+        <datalist id="teacherNamesList"></datalist>
+        <input id="substituteDate" type="date" />
+        <button id="substitutePreviewBtn">Показать варианты замены</button>
+        <div id="substitutionSuggestions"></div>
+        <p id="substitutionStatus"></p>
+      </section>
+
+      <section id="chat" class="card">
+        <h2>Чат с учителями</h2>
+        <div class="chat-layout">
+          <aside class="chat-contacts" id="chatContacts"></aside>
+          <div class="chat-panel">
+            <div class="chat-header" id="chatHeader">Выберите контакт</div>
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-compose">
+              <textarea id="chatInput" rows="2" placeholder="Введите сообщение"></textarea>
+              <button id="chatSendBtn">Отправить</button>
+            </div>
+            <p id="chatStatus"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h3>Инциденты</h3>
+          <ul id="incidents"></ul>
+        </article>
+        <article class="card">
+          <h3>Задачи</h3>
+          <ul id="tasksList"></ul>
+        </article>
+        <article class="card">
+          <h3>Замены</h3>
+          <ul id="substitutionsList"></ul>
+        </article>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

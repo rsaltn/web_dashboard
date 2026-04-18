@@ -1,0 +1,31 @@
+[
+  { "day": "monday", "lesson": 1, "time": "08:55-09:30", "className": "10AS", "subject": "English", "teacher": "Sholpan Shaymuratova", "candidateTeachers": ["Sholpan Shaymuratova", "Laura Rakhymbayeva", "Nurbek Shurynbay"], "room": "N10" },
+  { "day": "monday", "lesson": 2, "time": "09:30-10:15", "className": "10AS", "subject": "Algebra", "teacher": "Fatima Sargulova", "candidateTeachers": ["Fatima Sargulova", "Aigerim Sadykova", "Askar Nurlanov"], "room": "N12" },
+  { "day": "monday", "lesson": 3, "time": "10:15-11:15", "className": "10AS", "subject": "DEAR", "teacher": "Aizat Mukashev", "candidateTeachers": ["Aizat Mukashev", "Asemgul Ertozymova", "Olzhas Ulemen"], "room": "N15" },
+  { "day": "monday", "lesson": 4, "time": "13:00-13:40", "className": "10AS", "subject": "ICT", "teacher": "Eldos Seitsamuly", "candidateTeachers": ["Eldos Seitsamuly", "Madina Akhmetova", "Timur Zhaksylykov"], "room": "2F" },
+  { "day": "monday", "lesson": 5, "time": "14:30-15:10", "className": "10AS", "subject": "SAT Math", "teacher": "Sairasyn Sayrokov", "candidateTeachers": ["Sairasyn Sayrokov", "Rinat Mukhit", "Alibi Zhumabay"], "room": "N6" },
+
+  { "day": "tuesday", "lesson": 1, "time": "08:55-09:30", "className": "10AS", "subject": "SAT Verbal", "teacher": "Laura Rakhymbayeva", "candidateTeachers": ["Ainur Tokayeva", "Dias Nursapa", "Madina Saparova"], "room": "LH" },
+  { "day": "tuesday", "lesson": 2, "time": "09:30-10:15", "className": "10AS", "subject": "English", "teacher": "Nurbek Shurynbay", "candidateTeachers": ["Sholpan Shaymuratova", "Laura Rakhymbayeva", "Nurbek Shurynbay"], "room": "N14" },
+  { "day": "tuesday", "lesson": 3, "time": "10:15-11:15", "className": "10AS", "subject": "Physics", "teacher": "Aidos Sadak", "candidateTeachers": ["Aidos Sadak", "Kairat Beisen", "Elmira Kusain"], "room": "N1" },
+  { "day": "tuesday", "lesson": 4, "time": "13:00-13:40", "className": "10AS", "subject": "Algebra", "teacher": "Fatima Sargulova", "candidateTeachers": ["Fatima Sargulova", "Aigerim Sadykova", "Askar Nurlanov"], "room": "N17" },
+  { "day": "tuesday", "lesson": 5, "time": "14:30-15:10", "className": "10AS", "subject": "PE", "teacher": "Sanzhar Omar", "candidateTeachers": ["Sanzhar Omar", "Aliya Utepova", "Nurdaulet Amir"], "room": "Sports Hall" },
+
+  { "day": "wednesday", "lesson": 1, "time": "08:55-09:30", "className": "10AS", "subject": "Geometry", "teacher": "Fatima Sargulova", "candidateTeachers": ["Aruzhan Smagul", "Saida Nursultan", "Madiyar Ibray"], "room": "N12" },
+  { "day": "wednesday", "lesson": 2, "time": "09:30-10:15", "className": "10AS", "subject": "English", "teacher": "Sholpan Shaymuratova", "candidateTeachers": ["Sholpan Shaymuratova", "Laura Rakhymbayeva", "Nurbek Shurynbay"], "room": "N10" },
+  { "day": "wednesday", "lesson": 3, "time": "10:15-11:15", "className": "10AS", "subject": "DEAR", "teacher": "Asemgul Ertozymova", "candidateTeachers": ["Aizat Mukashev", "Asemgul Ertozymova", "Olzhas Ulemen"], "room": "2F" },
+  { "day": "wednesday", "lesson": 4, "time": "13:00-13:40", "className": "10AS", "subject": "Physics", "teacher": "Aidos Sadak", "candidateTeachers": ["Aidos Sadak", "Kairat Beisen", "Elmira Kusain"], "room": "Chem Lab" },
+  { "day": "wednesday", "lesson": 5, "time": "14:30-15:10", "className": "10AS", "subject": "SAT Verbal", "teacher": "Ainur Tokayeva", "candidateTeachers": ["Ainur Tokayeva", "Dias Nursapa", "Madina Saparova"], "room": "LH" },
+
+  { "day": "thursday", "lesson": 1, "time": "08:55-09:30", "className": "10AS", "subject": "Kazakh", "teacher": "Zhanar Bolkebay", "candidateTeachers": ["Zhanar Bolkebay", "Dana Turlybek", "Rauan Bek"], "room": "1F" },
+  { "day": "thursday", "lesson": 2, "time": "09:30-10:15", "className": "10AS", "subject": "Kazakh", "teacher": "Zhanar Bolkebay", "candidateTeachers": ["Zhanar Bolkebay", "Dana Turlybek", "Rauan Bek"], "room": "N15" },
+  { "day": "thursday", "lesson": 3, "time": "10:15-11:15", "className": "10AS", "subject": "English", "teacher": "Sholpan Shaymuratova", "candidateTeachers": ["Sholpan Shaymuratova", "Laura Rakhymbayeva", "Nurbek Shurynbay"], "room": "N14" },
+  { "day": "thursday", "lesson": 4, "time": "13:00-13:40", "className": "10AS", "subject": "Algebra", "teacher": "Fatima Sargulova", "candidateTeachers": ["Fatima Sargulova", "Aigerim Sadykova", "Askar Nurlanov"], "room": "N17" },
+  { "day": "thursday", "lesson": 5, "time": "14:30-15:10", "className": "10AS", "subject": "ICT", "teacher": "Eldos Seitsamuly", "candidateTeachers": ["Eldos Seitsamuly", "Madina Akhmetova", "Timur Zhaksylykov"], "room": "2F" },
+
+  { "day": "friday", "lesson": 1, "time": "08:55-09:30", "className": "10AS", "subject": "English", "teacher": "Sholpan Shaymuratova", "candidateTeachers": ["Sholpan Shaymuratova", "Laura Rakhymbayeva", "Nurbek Shurynbay"], "room": "N10" },
+  { "day": "friday", "lesson": 2, "time": "09:30-10:15", "className": "10AS", "subject": "Algebra", "teacher": "Fatima Sargulova", "candidateTeachers": ["Fatima Sargulova", "Aigerim Sadykova", "Askar Nurlanov"], "room": "N12" },
+  { "day": "friday", "lesson": 3, "time": "10:15-11:15", "className": "10AS", "subject": "DEAR", "teacher": "Olzhas Ulemen", "candidateTeachers": ["Aizat Mukashev", "Asemgul Ertozymova", "Olzhas Ulemen"], "room": "N7" },
+  { "day": "friday", "lesson": 4, "time": "13:00-13:40", "className": "10AS", "subject": "SAT Math", "teacher": "Sairasyn Sayrokov", "candidateTeachers": ["Sairasyn Sayrokov", "Rinat Mukhit", "Alibi Zhumabay"], "room": "N32" },
+  { "day": "friday", "lesson": 5, "time": "14:30-15:10", "className": "10AS", "subject": "ICT", "teacher": "Eldos Seitsamuly", "candidateTeachers": ["Eldos Seitsamuly", "Madina Akhmetova", "Timur Zhaksylykov"], "room": "2F" }
+]

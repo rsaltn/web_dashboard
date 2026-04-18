@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1776516986842",
+    "createdAt": "2026-04-18T12:56:26.842Z",
+    "chatId": "6862267674",
+    "from": "saltn",
+    "className": "1А",
+    "present": 25,
+    "absent": 2
+  },
+  {
+    "id": "1776525784099",
+    "createdAt": "2026-04-18T15:23:04.099Z",
+    "chatId": "6862267674",
+    "from": "saltn",
+    "className": "2B",
+    "present": 70,
+    "absent": 7
+  }
+]

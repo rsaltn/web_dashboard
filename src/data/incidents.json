@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1776517002964",
+    "createdAt": "2026-04-18T12:56:42.964Z",
+    "chatId": "6862267674",
+    "from": "saltn",
+    "status": "new",
+    "description": "В кабинете 12 сломалась парта",
+    "room": "12",
+    "priority": "medium"
+  },
+  {
+    "id": "1776525801272",
+    "createdAt": "2026-04-18T15:23:21.272Z",
+    "chatId": "6862267674",
+    "from": "saltn",
+    "status": "new",
+    "description": "Диас сломал стол в столоввой",
+    "room": "не указан",
+    "priority": "medium"
+  }
+]
