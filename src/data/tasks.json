@@ -40,5 +40,117 @@
       "reason": "Автооценка: требуется ручная проверка",
       "orderRefs": []
     }
+  },
+  {
+    "id": "1776545018991-s0nss",
+    "createdAt": "2026-04-18T20:43:38.991Z",
+    "status": "new",
+    "assignee": "Aidos Sadak",
+    "title": "у нас будет хакатон",
+    "due": "",
+    "details": "у нас будет хакатон",
+    "complianceRisk": {
+      "risk": "medium",
+      "reason": "Автооценка: требуется ручная проверка",
+      "orderRefs": []
+    }
+  },
+  {
+    "id": "1776550288558-u1uxs",
+    "createdAt": "2026-04-18T22:11:28.558Z",
+    "status": "new",
+    "assignee": "Eldos Seitsamuly",
+    "title": "запри кабинет информатики",
+    "due": "",
+    "details": "запри кабинет информатики",
+    "complianceRisk": {
+      "risk": "medium",
+      "reason": "Автооценка: требуется ручная проверка",
+      "orderRefs": []
+    }
+  },
+  {
+    "id": "1776551720031-lipou",
+    "createdAt": "2026-04-18T22:35:20.031Z",
+    "status": "new",
+    "assignee": "Елдос Сейтсымулы",
+    "title": "открой дверь",
+    "due": "",
+    "details": "открой дверь",
+    "complianceRisk": {
+      "risk": "medium",
+      "reason": "Автооценка: требуется ручная проверка",
+      "orderRefs": []
+    }
+  },
+  {
+    "id": "1776552248536-nl4zi",
+    "createdAt": "2026-04-18T22:44:08.536Z",
+    "status": "new",
+    "assignee": "Елдос",
+    "title": "открой дверь",
+    "due": "",
+    "details": "открой дверь",
+    "complianceRisk": {
+      "risk": "medium",
+      "reason": "Автооценка: требуется ручная проверка",
+      "orderRefs": []
+    }
+  },
+  {
+    "id": "1776552315136-cubfe",
+    "createdAt": "2026-04-18T22:45:15.136Z",
+    "status": "new",
+    "assignee": "Eldos Seitsamuly",
+    "title": "Eldos Seitsamuly: подготовь зал (без срока) [риск: medium]",
+    "due": "",
+    "details": "Eldos Seitsamuly: подготовь зал (без срока) [риск: medium]",
+    "complianceRisk": {
+      "risk": "medium",
+      "reason": "Автооценка: требуется ручная проверка",
+      "orderRefs": []
+    }
+  },
+  {
+    "id": "1776552346039-j4jpy",
+    "createdAt": "2026-04-18T22:45:46.039Z",
+    "status": "new",
+    "assignee": "Елдос",
+    "title": "подготовь актовый зал для хакатона",
+    "due": "",
+    "details": "подготовь актовый зал для хакатона.",
+    "complianceRisk": {
+      "risk": "medium",
+      "reason": "Автооценка: требуется ручная проверка",
+      "orderRefs": []
+    }
+  },
+  {
+    "id": "1776552346284-mxupn",
+    "createdAt": "2026-04-18T22:45:46.284Z",
+    "status": "new",
+    "assignee": "Шолпан",
+    "title": "закажи воду и бейджи до пятницы",
+    "due": "",
+    "details": "закажи воду и бейджи до пятницы.",
+    "complianceRisk": {
+      "risk": "medium",
+      "reason": "Автооценка: требуется ручная проверка",
+      "orderRefs": []
+    }
+  },
+  {
+    "id": "1776553643321-buine",
+    "createdAt": "2026-04-18T23:07:23.321Z",
+    "status": "new",
+    "assignee": "Eldos Seitsamuly",
+    "title": "подготовь актовый зал для хакатона",
+    "due": "",
+    "details": "подготовь актовый зал для хакатона.",
+    "complianceRisk": {
+      "risk": "medium",
+      "reason": "Автооценка: требуется ручная проверка",
+      "orderRefs": []
+    }
   }
 ]

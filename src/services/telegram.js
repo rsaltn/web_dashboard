@@ -256,7 +256,7 @@ function createTelegramService() {
 
     const incident = parseIncidentMessage(text);
     if (incident) {
-      appendRecord("incidents.json", {
+      const incidentRecord = appendRecord("incidents.json", {
         id: Date.now().toString(),
         createdAt: new Date().toISOString(),
         chatId,
@@ -264,6 +264,29 @@ function createTelegramService() {
         status: "new",
         ...incident,
       });
+
+      // Автоматически создаём задачу для завхоза
+      const zavhoz = employees.find((e) => e.role === "facility_manager");
+      if (zavhoz) {
+        appendRecord("tasks.json", {
+          id: `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+          createdAt: new Date().toISOString(),
+          status: "new",
+          assignee: zavhoz.name,
+          title: `Инцидент: ${incident.description}`,
+          due: "",
+          details: `Кабинет ${incident.room}. Приоритет: ${incident.priority}`,
+          complianceRisk: { risk: "low", reason: "Инцидент", orderRefs: [] },
+        });
+
+        // Уведомляем завхоза
+        if (zavhoz.telegramChatId) {
+          await safeSendMessage(
+            zavhoz.telegramChatId,
+            `🔧 Новый инцидент\nКабинет: ${incident.room}\nОписание: ${incident.description}\nПриоритет: ${incident.priority}`
+          );
+        }
+      }
     }
 
     if (text === "/summary") {

@@ -19,6 +19,11 @@ async function parseDirectorTasks(text, employees) {
 Ответь строго JSON-массивом вида:
 [{"assignee":"ФИО","title":"...","due":"YYYY-MM-DD","details":"..."}]
 
+ВАЖНО: 
+- Имена могут быть на русском, казахском или английском языках
+- Ищи имена по частичному совпадению (например "Елдос" = "Eldos Seitsamuly")
+- Если имя не найдено точно, найди наиболее похожее
+
 Список сотрудников:
 ${employees.map((e) => `- ${e.name} (${e.role}, ${e.subject || "без предмета"})`).join("\n")}
 
@@ -36,6 +41,48 @@ ${text}
   return parseDirectorTasksFallback(text, employees);
 }
 
+function normalizeForSearch(str) {
+  // Normalize for fuzzy matching
+  return str
+    .toLowerCase()
+    .replace(/[её]/g, 'e')
+    .replace(/[ий]/g, 'i')
+    .replace(/[аa]/g, 'a')
+    .replace(/[оo]/g, 'o')
+    .replace(/[уu]/g, 'u')
+    .replace(/\s+/g, '');
+}
+
+function findEmployeeByName(nameQuery, employees) {
+  const query = normalizeForSearch(nameQuery);
+  
+  // Exact match first
+  let match = employees.find((e) => normalizeForSearch(e.name) === query);
+  if (match) return match;
+  
+  // Partial match by first name
+  match = employees.find((e) => {
+    const firstName = e.name.split(' ')[0];
+    return normalizeForSearch(firstName) === query || query.includes(normalizeForSearch(firstName));
+  });
+  if (match) return match;
+  
+  // Partial match by last name
+  match = employees.find((e) => {
+    const lastName = e.name.split(' ')[1] || '';
+    return normalizeForSearch(lastName) === query || query.includes(normalizeForSearch(lastName));
+  });
+  if (match) return match;
+  
+  // Any partial match
+  match = employees.find((e) => {
+    const normalized = normalizeForSearch(e.name);
+    return normalized.includes(query) || query.includes(normalized);
+  });
+  
+  return match;
+}
+
 function parseDirectorTasksFallback(text, employees) {
   const chunks = text
     .split(/\n|;/)
@@ -44,10 +91,28 @@ function parseDirectorTasksFallback(text, employees) {
 
   const results = [];
   for (const chunk of chunks) {
-    const matched = employees.find((e) => chunk.toLowerCase().includes(e.name.toLowerCase()));
+    // Try to find employee by fuzzy matching
+    const words = chunk.split(/[\s,]+/);
+    let matched = null;
+    
+    // Try each word as potential name
+    for (const word of words) {
+      if (word.length > 2) {
+        matched = findEmployeeByName(word, employees);
+        if (matched) break;
+      }
+    }
+    
+    // Try first two words as full name
+    if (!matched && words.length >= 2) {
+      const fullName = `${words[0]} ${words[1]}`;
+      matched = findEmployeeByName(fullName, employees);
+    }
+    
     const [maybeAssignee, ...rest] = chunk.split(",");
     const details = rest.join(",").trim() || chunk;
     const title = details.split(".")[0].trim() || "Новая задача";
+    
     results.push({
       assignee: matched?.name || maybeAssignee.trim(),
       title,

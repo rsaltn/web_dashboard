@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const cron = require("node-cron");
 const { port } = require("./config");
 const { appendRecord, readJson } = require("./store");
 const { parseDirectorTasks, simplifyOrder, detectComplianceRisk } = require("./services/gemini");
@@ -27,16 +28,54 @@ function normalize(value) {
   return String(value || "").trim().toLowerCase();
 }
 
+function normalizeForSearch(str) {
+  // Normalize for fuzzy matching across languages
+  return str
+    .toLowerCase()
+    .replace(/[её]/g, 'e')
+    .replace(/[ий]/g, 'i')
+    .replace(/[аa]/g, 'a')
+    .replace(/[оo]/g, 'o')
+    .replace(/[уu]/g, 'u')
+    .replace(/\s+/g, '');
+}
+
 function resolveAssigneeName(rawAssignee, employees) {
   if (!rawAssignee) return null;
-  const direct = employees.find((e) => normalize(e.name) === normalize(rawAssignee));
+  
+  const query = normalize(rawAssignee);
+  const queryNormalized = normalizeForSearch(rawAssignee);
+  
+  // Exact match
+  const direct = employees.find((e) => normalize(e.name) === query);
   if (direct) return direct.name;
-  const partial = employees.find(
+  
+  // Fuzzy match
+  const fuzzy = employees.find((e) => {
+    const normalized = normalizeForSearch(e.name);
+    return normalized === queryNormalized || 
+           normalized.includes(queryNormalized) || 
+           queryNormalized.includes(normalized);
+  });
+  if (fuzzy) return fuzzy.name;
+  
+  // Partial match by first or last name
+  const partial = employees.find((e) => {
+    const nameParts = e.name.split(' ');
+    return nameParts.some(part => 
+      normalizeForSearch(part).includes(queryNormalized) ||
+      queryNormalized.includes(normalizeForSearch(part))
+    );
+  });
+  if (partial) return partial.name;
+  
+  // Original fallback
+  const partialOld = employees.find(
     (e) =>
-      normalize(e.name).includes(normalize(rawAssignee)) ||
-      normalize(rawAssignee).includes(normalize(e.name))
+      normalize(e.name).includes(query) ||
+      query.includes(normalize(e.name))
   );
-  return partial ? partial.name : rawAssignee;
+  return partialOld ? partialOld.name : rawAssignee;
 }
 
 function generateMiniSchedule() {
@@ -87,6 +126,37 @@ app.get("/api/dashboard", (req, res) => {
     tasks: tasks.slice(-20).reverse(),
     substitutions: substitutions.slice(-20).reverse(),
   });
+});
+
+// Manual meal summary endpoint for testing
+app.get("/api/meal-summary", (req, res) => {
+  try {
+    const today = new Date().toISOString().slice(0, 10);
+    const attendance = readJson("attendance_records.json", [])
+      .filter(r => r.createdAt && r.createdAt.startsWith(today));
+    
+    const summary = buildMealSummary(attendance);
+    const message = `📊 Свод питания на ${today}
+
+🍽️ Всего порций: ${summary.totalPortions}
+❌ Отсутствуют: ${summary.totalAbsent}
+📚 Классов отчиталось: ${summary.classesCounted}
+
+Данные собраны из ${attendance.length} записей посещаемости.`;
+
+    res.json({
+      success: true,
+      date: today,
+      summary,
+      message,
+      recordsCount: attendance.length
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
 });
 
 app.get("/api/teachers", (req, res) => {
@@ -140,20 +210,46 @@ app.post("/api/tasks/from-text", async (req, res) => {
     const orders = readJson("orders.json", []);
     const parsedTasks = await parseDirectorTasks(text, employees);
 
-    const saved = [];
+    const tasksWithRisk = [];
     for (const task of parsedTasks) {
       const risk = await detectComplianceRisk(`${task.title}. ${task.details || ""}`, orders);
+      tasksWithRisk.push({
+        ...task,
+        complianceRisk: risk,
+      });
+    }
+    
+    // Return tasks without saving for confirmation
+    res.json({ tasks: tasksWithRisk });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post("/api/tasks/confirm", async (req, res) => {
+  try {
+    const { tasks } = req.body;
+    if (!tasks || !Array.isArray(tasks)) {
+      return res.status(400).json({ error: "tasks array is required" });
+    }
+
+    const employees = readJson("employees.json", []);
+    const saved = [];
+    
+    for (const task of tasks) {
       const resolvedAssignee = resolveAssigneeName(task.assignee, employees);
       const employee = employees.find((e) => e.name === resolvedAssignee);
+      
       const record = appendRecord("tasks.json", {
         id: `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
         createdAt: new Date().toISOString(),
         status: "new",
         ...task,
         assignee: resolvedAssignee,
-        complianceRisk: risk,
       });
+      
       saved.push(record);
+      
       if (employee?.telegramChatId) {
         await notifyTelegram(
           employee.telegramChatId,
@@ -161,6 +257,7 @@ app.post("/api/tasks/from-text", async (req, res) => {
         );
       }
     }
+    
     res.json({ tasks: saved });
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -338,7 +435,45 @@ app.post("/api/chat/send", async (req, res) => {
   }
 });
 
+// Automatic meal summary at 09:00 every day (Module 1 requirement)
+cron.schedule('0 9 * * *', async () => {
+  try {
+    const today = new Date().toISOString().slice(0, 10);
+    const attendance = readJson("attendance_records.json", [])
+      .filter(r => r.createdAt && r.createdAt.startsWith(today));
+    
+    if (attendance.length === 0) {
+      console.log(`No attendance records found for ${today}`);
+      return;
+    }
+    
+    const summary = buildMealSummary(attendance);
+    const message = `📊 Автоматический свод питания на ${today}
+
+🍽️ Всего порций: ${summary.totalPortions}
+❌ Отсутствуют: ${summary.totalAbsent}
+📚 Классов отчиталось: ${summary.classesCounted}
+
+Данные собраны автоматически из чата учителей.`;
+    
+    // Get director's chat ID from environment or config
+    const directorChatId = process.env.DIRECTOR_CHAT_ID;
+    
+    if (directorChatId) {
+      await notifyTelegram(directorChatId, message);
+      console.log(`✅ Meal summary sent to director at ${new Date().toLocaleString()}`);
+    } else {
+      console.log(`📊 Meal summary for ${today}: ${summary.totalPortions} portions, ${summary.totalAbsent} absent`);
+    }
+  } catch (error) {
+    console.error('Error in daily meal summary cron job:', error);
+  }
+}, {
+  timezone: "Asia/Almaty"
+});
+
 app.listen(port, () => {
   // eslint-disable-next-line no-console
   console.log(`Server is running on http://localhost:${port}`);
+  console.log(`📅 Daily meal summary scheduled for 09:00 (Asia/Almaty timezone)`);
 });

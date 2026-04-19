@@ -7,6 +7,17 @@ Node.js MVP for AIS Hack 3.0:
 - Gemini-based task parsing and order simplification
 - Web dashboard for school director
 
+## 🎯 Recent Updates (April 2026)
+
+### ✅ Implemented Improvements:
+1. **Auto-assignment of incidents to facility manager** - incidents automatically create tasks
+2. **Double-click protection** - all buttons lock with loading indicators
+3. **UI for order simplification (Module 4)** - full RAG section on dashboard
+
+📄 Details: see `CHANGELOG.md` and `DEMO_GUIDE.md`
+
+---
+
 ## 1) Setup
 
 ```bash

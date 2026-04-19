@@ -35,5 +35,17 @@
     "toRole": "teacher",
     "toChatId": "6862267674",
     "text": "hf,jn"
+  },
+  {
+    "id": "1776551637874-ci6rw",
+    "createdAt": "2026-04-18T22:33:57.874Z",
+    "direction": "outbound",
+    "channel": "dashboard",
+    "fromName": "Director",
+    "fromRole": "director",
+    "toName": "Eldos Seitsamuly",
+    "toRole": "teacher",
+    "toChatId": "6862267674",
+    "text": "чтм"
   }
 ]

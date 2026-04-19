@@ -16,5 +16,32 @@
     "className": "2B",
     "present": 70,
     "absent": 7
+  },
+  {
+    "id": "1776526000000",
+    "createdAt": "2026-04-19T08:30:00.000Z",
+    "chatId": "6862267674",
+    "from": "teacher1",
+    "className": "1А",
+    "present": 24,
+    "absent": 1
+  },
+  {
+    "id": "1776526100000",
+    "createdAt": "2026-04-19T08:35:00.000Z",
+    "chatId": "6862267674",
+    "from": "teacher2",
+    "className": "2B",
+    "present": 28,
+    "absent": 2
+  },
+  {
+    "id": "1776526200000",
+    "createdAt": "2026-04-19T08:40:00.000Z",
+    "chatId": "6862267674",
+    "from": "teacher3",
+    "className": "3C",
+    "present": 22,
+    "absent": 3
   }
 ]
